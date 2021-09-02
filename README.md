@@ -25,6 +25,31 @@ cmake ../
 cmake --build . -- -j 6
 ```
 
+### update your default chiapos used to plot
+in your python venv execute 
+```bash
+# download
+cd /path/to/chia-blockchain
+git clone https://github.com/FlyWieEinAirplane/chiapos
+cd chiapos
+
+# compile
+mkdir -p build && cd build
+cmake ../
+cmake --build . -- -j 6
+
+# install
+# change dir to 'chiapos'
+cd ..
+python setup.py install
+# change dir to 'chia-blockchain'
+cd ..
+#change chiapos version from 1.0.4 to 0.0.0 (you can also use a different editor)
+vim setup.py
+python setup.py install
+#done
+```
+
 ### Run tests
 
 ```bash
